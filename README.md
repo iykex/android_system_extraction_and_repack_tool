@@ -1,7 +1,7 @@
-#**Android System Extractrion and Repack Tool **#
-##by : iykeDROID™ ##
+##**Android System Extractrion and Repack Tool**##
+##by : iykeDROID™##
 ##_Nana Iyke Quame_##
-#**http://www.droidpeepz.xyz**#
+**http://www.droidpeepz.xyz**
 
 ##**USAGE:**##
 ----------
@@ -18,6 +18,7 @@ Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **D
   
 
 ##**EXAMPLE:**##
+Again , Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **Desktop**
 
 In your terminal, type the following to start the script:
 ```
