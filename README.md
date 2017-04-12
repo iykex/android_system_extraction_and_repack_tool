@@ -21,7 +21,7 @@ Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **D
 2. Use "f" from menu to convert **"file_contexts.bin"** to text readable **"file_contexts"**
 3. Copy : **system.new.dat, system.transfer.list & file_contexts** to **"convert-dat"** folder. 
 4. Use "i" from menu to unpack, which the output will be name as **"rom_system"** for modifications of apks & files.
-5. Use "y" from menu to repact, which the complete new **"system.new.dat", "system.patch.dat" & "system.transfer.list"** will be located at **"Finish-new.dat"** folder
+5. Use "y" from menu to repack, which the complete new **"system.new.dat", "system.patch.dat" & "system.transfer.list"** will be located at **"Finish-new.dat"** folder
 6. Done !
   
 
