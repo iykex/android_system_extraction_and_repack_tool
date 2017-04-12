@@ -39,5 +39,6 @@ Double-click the superr file and choose "Run in Terminal" if your OS supports it
 ##**ALERT!!!**##
 sudo is requested in the script.
 
-#**http://www.droidpeepz.xyz**#
-*
+**http://www.droidpeepz.xyz**
+
+##THANK YOU##
