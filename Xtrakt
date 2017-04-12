@@ -1,0 +1,382 @@
+#!/bin/bash
+printf '\e[8;35;80t]'
+#
+# Custom build script
+# Copyright © 2017, Nana Iyke Quame "iyke"
+# <nanaquameallday@gmail.com>
+#
+#Android_Matrix_Development
+#DroidPeepz™ Inc
+#
+# NOTE : This Is Meant For  The Good & Ease Of Kernel Development,
+#  - Please You Are Free To Edit And Make It Better, But DO NOT STEAL !
+#  -
+#
+#--------------------------
+user=$(echo "$(whoami | gawk '{ print $1 }')")
+tul=Android_System_Extractrion_and_Repack_Tool
+hm=home
+dsk=Desktop
+sy=system
+flicx="$PWD/$hm/$user/$dsk/$tull/file_context_zone/.flicx/flicx.sh";
+permsda=chmod 755 /$hm/$user/$dsk/$tultools/sdat2img.py
+permimg=chmod 755 /$hm/$user/$dsk/$tultools/img2simg.py
+permext=chmod 755 /$hm/$user/$dsk/$tultools/make_ext4fs
+permext=chmod 755 /$hm/$user/$dsk/$tultools/img2simg.py
+#-------------------
+
+#START - HOME
+START(){
+clear
+echo -e "                        \033[0;34m "
+cecho P"" "                     \e[4m*||_http://www.droidpeepz.xyz_||*"
+echo
+echo
+cecho P ""  "                     \e[7m================================="
+cecho C ""  "            \e[7m===!! Android System Extraction/Repack Tool. !!==="
+cecho G "" "                                     \e[7mFor"
+cecho C "" "                     \e[7m*..MediaTek & Qualcomm Devices..*"
+echo
+echo "                     ========*****************========"
+cecho G ""  "                          ---> DroidPeepz™ Inc    "
+cecho P ""  "                          ---> by : Nana Iyke Quame   "
+echo "                     ========*****************========"
+echo "                               Credit Goes To:"
+cecho Y "" "                      **ANDROID MATRIX DEVELOPMENT**"
+cecho P "" "                            & @xpirt, @Mesaj, @matrix  "
+echo
+echo
+echo
+
+cecho B "" "    \e[7mMenu"    "                        || Start Time : "$(date +%b-%d-%Y-%H:%M)''
+echo
+cecho Y "    f - " "Convert file_contexts "
+echo
+cecho C "    i - " "Unpack "system.new.dat" "
+cecho R "" "        NOTE : This process will request for your "sudo" password! "
+echo
+cecho G "    y - " "Repack To "system.new.dat" "
+echo
+cecho C "    v - " "View Credits + info"
+echo
+cecho R "    x - " "Exit"
+echo
+echo
+}
+
+
+ #MENU
+EXT_MAIN(){
+while :
+do
+
+  clear
+  START
+  read -p "           Enter option: " CHOICE
+  case "$CHOICE" in
+			Y|y ) RePck;;
+			F|f ) st_flicx;;
+			I|i ) UnPck;;
+			V|v) V_CREDIT;;
+			X|x) EXIT;;
+				*) cecho R "" "     Invalid option"; sleep 0.3; continue;;
+	esac
+
+done
+}
+
+PAGE(){
+clear
+echo -e "                        \033[0;34m "
+cecho P"" "                     \e[4m*||_http://www.droidpeepz.xyz_||*"
+echo
+echo
+cecho P ""  "                     \e[7m================================="
+cecho C ""  "            \e[7m===!! Android System Extraction/Repack Tool. !!==="
+cecho G "" "                                     \e[7mFor"
+cecho C "" "                     \e[7m*..MediaTek & Qualcomm Devices..*"
+echo
+echo
+echo
+}
+
+#ST_DEB
+st_flicx(){
+cd /$hm/$user/$dsk/$tul/.flicx
+if [ -f  flicx.sh* ]
+then
+chmod +x flicx.sh
+./flicx.sh*
+else
+START
+#exit
+fi
+}
+
+#--------------------------
+#converting to system image
+#--------------------------
+UnPck(){
+printf '\e[8;35;80t]'
+$permsda
+clear
+PAGE
+
+echo "        -----> Unpacking Image."
+echo
+if [ -f /$hm/$user/$dsk/$tul/convert-dat/system.transfer.list ]
+  then
+  echo
+  echo "      system.transfer.list [FOUND]"
+fi
+if [ -f /$hm/$user/$dsk/$tul/convert-dat/system.new.dat ]
+  then
+  echo
+  echo "      system.new.dat [FOUND]"
+  echo
+  sleep 0.6;
+  PAGE
+echo "            Few seconds to go... :)"
+( tools/./sdat2img.py convert-dat/system.transfer.list convert-dat/system.new.dat convert-dat/system.img ) >> Unpack.log
+mkdir -p convert-dat/out
+mkdir -p convert-dat/tmpsparse
+mkdir -p convert-dat/rom_system
+mkdir -p Finish-new.dat
+echo
+echo "        -----> mounting system image..."
+echo "                  Please Wait..."
+echo
+echo -e "  \033[0;31m "
+sudo mount -t ext4 -o loop convert-dat/system.img convert-dat/out/
+echo
+echo -e "  \033[0;36m "
+echo "        -----> setting permission for modifications..."
+echo "                  Please Wait..."
+sudo chown -R $user:$user /$hm/$user/$dsk/$tul/convert-dat/out
+( sudo cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> x-log
+sudo umount /$hm/$user/$dsk/$tul/convert-dat/out/
+rm -rf /$hm/$user/$dsk/$tul/convert-dat/out
+rm convert-dat/system.new.dat
+rm convert-dat/system.transfer.list
+echo
+echo -e "        \033[0;36m "
+echo "        -----> Please go to convert-dat/rom_system to edit your Rom "
+echo
+echo -e "                        \033[0;34m "
+echo "============================="
+echo "  !! PROCESS TIME !!      "
+echo $[$SECONDS / 60]' minutes '$[$SECONDS % 60]' seconds'
+echo "============================="
+echo
+echo
+echo "                !! DONE !!"
+echo
+echo
+read -p "Press enter key to continue . . ."
+START " "
+else
+    PAGE
+    echo -e "  \033[0;31m "
+    echo "WARNING!  WARNING!! WARNING!!!"
+    echo "Please Check & Trace Where Errors."
+    echo " There Is NO rom_system found"
+    echo
+    cecho R "" "system.new.dat -->> Missing !"
+    echo
+    cecho R "" "system.transfer.list -->> Missing !"
+    echo
+    read -p "Press enter key to continue . . ."
+    echo
+START " "
+fi
+}
+
+
+RePck(){
+printf '\e[8;35;80t]'
+PAGE
+echo
+#--------------------------
+echo "        -----> Repacking Image."
+echo
+echo "            Few seconds to go... :)"
+if [ -f /$hm/$user/$dsk/$tul/convert-dat/rom_system/build.prop* ]
+ then
+ api=$(grep "ro.build.version.sdk" convert-dat/rom_system/build.prop | cut -d"=" -f2)
+ echo -e " \033[0;34m "
+    (echo "      Android SDK = $api ")
+    echo
+    fi
+  if [ -f /$hm/$user/$dsk/$tul/convert-dat/file_contexts ]
+    then
+    echo "      file_contexts [FOUND]"
+    echo
+    echo -e "        \033[0;36m "
+    #tools/./make_ext4fs -T 0 -S convert-dat/file_contexts -l 1073741824 -a system -a system convert-dat/system_new.img convert-dat/out/
+    tools/./make_ext4fs -s -T -1 -S convert-dat/file_contexts -L system -l 2692743168 -a system convert-dat/system_new.img convert-dat/rom_system/
+echo
+clear
+PAGE
+echo "        -----> Converting To Sparse Image."
+if [[ $api = "21" ]]; then
+    argv="1"
+  elif [[ $api = "22" ]]; then
+    argv="2"
+  elif [[ $api = "23" ]]; then
+    argv="3"
+  elif [[ $api -ge "24" ]]; then
+    argv="4"
+  fi
+  echo "            Please Wait..."
+( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) >> Repack.log
+echo
+  echo "            Few seconds to go... :)"
+( cp -avr  /$hm/$user/$dsk/$tul/convert-dat/tmpsparse/system.* /$hm/$user/$dsk/$tul/Finish-new.dat ) >> x-log
+echo
+  echo "            Thank You !!! :0"
+rm /$hm/$user/$dsk/$tul/convert-dat/tmpsparse/system.*
+rm /$hm/$user/$dsk/$tul/convert-dat/system.img
+rm /$hm/$user/$dsk/$tul/convert-dat/system_new.img
+echo
+echo
+if [ -f /$hm/$user/$dsk/$tul/Finish-new.dat/system.new.dat ]
+then
+    PAGE
+    echo -e "        \033[0;36m "
+    echo " PLEASE CHECK Finish-new.dat -Folder to see the following new files"
+    echo
+    echo "  ************************************"
+    echo
+    ls Finish-new.dat
+    echo  ""
+echo -e "                        \033[0;34m "
+echo "============================="
+echo "          !! PROCESS TIME !!      "
+echo $[$SECONDS / 60]' minutes '$[$SECONDS % 60]' seconds'
+echo "============================="
+echo
+echo
+echo "                !! DONE !!"
+echo
+echo
+read -p "Press enter key to continue . . ."
+echo
+START " "
+fi
+else
+    PAGE
+    echo -e "  \033[0;31m "
+    echo "WARNING!  WARNING!! WARNING!!!"
+    echo "Please Check & Trace Where Errors."
+    echo " There Is NO rom_system found"
+    echo
+    cecho R "" "file_contexts -->> Missing !"
+    echo
+    cecho R "" "Android SDK -->> not detected !"
+    echo
+    read -p "Press enter key to continue . . ."
+    echo
+    PAGE
+    echo "WARNING!  WARNING!! WARNING!!!"
+    echo "Please Check & Trace Where Errors."
+    echo
+    echo
+    cecho R "" "Repack ERRORS!"
+    echo
+    cecho R "" "Repack ERRORS!"
+    echo
+    cecho R "" "Repack ERRORS!"
+    echo
+    read -p "Press enter key to continue . . ."
+    echo
+START " "
+fi
+}
+#--------------------------
+
+###-----------------------------------------
+# ./sdat2img.py system.transfer.list system.new.dat system.img
+# sudo mount -t ext4 -o loop system.img system/
+# sudo chown -R iyke:iyke /home/iyke/Desktop/xe/tools/system
+# ./make_ext4fs -T 0 -S file_contexts -l 1073741824 -a system system_new.img system/
+
+
+#credit & info
+V_CREDIT(){
+  clear
+  echo
+  echo " adding soon"
+  echo
+  read -p                 "Press enter key to continue . . ."
+  START
+}
+
+#WAIT
+RELAX(){
+ PAGE
+echo  ""
+echo -e "                        \033[0;34m "
+echo "============================="
+echo "          !! PROCESS TIME !!      "
+echo $[$SECONDS / 60]' minutes '$[$SECONDS % 60]' seconds'
+echo "============================="
+echo
+echo
+echo "                !! DONE !!"
+echo
+echo
+read -p "Press enter key to continue . . ."
+echo
+HOME " "
+}
+
+#EXIT
+EXIT(){
+printf '\e[8;35;80t]'
+clear
+ cecho C "" "Talent Is Nothing WIthout Ethics!!!"
+ sleep 1.0;
+ clear
+exit
+}
+
+#COLOR
+#Credit goes to @Matrix for his color codes
+#USAGE: cecho TYPE=R|G|Y|B|P|C|W "msg1" "color_msg2" "msg3"
+cecho ()
+   {
+   #Case didn't work out for me in cygwin
+   if [ "$1" == "R" ]
+then
+  echo -e "$2""\033[0;91m$3\033[0m""$4" # Red
+elif  [ "$1" == "G" ]
+then
+  echo -e "$2""\033[0;92m$3\033[0m""$4" # Green
+elif  [ "$1" == "Y" ]
+then
+  echo -e "$2""\033[0;93m$3\033[0m""$4" # Yellow
+elif  [ "$1" == "B" ]
+then
+  echo -e "$2""\033[0;94m$3\033[0m""$4" # Blue
+elif  [ "$1" == "P" ]
+then
+  echo -e "$2""\033[0;95m$3\033[0m""$4" # Purple
+elif  [ "$1" == "C" ]
+then
+  echo -e "$2""\033[0;96m$3\033[0m""$4" # Cyan
+elif  [ "$1" == "W" ]
+then
+  echo -e "$2""\033[0;97m$3\033[0m""$4" # White
+ fi
+}
+
+#EXTRA_COLOR_OPTIONS
+blue='\033[0;34m'
+cyan='\033[0;36m'
+yellow='\033[0;33m'
+red='\033[0;31m'
+nocol='\033[0m'
+
+
+#DEPLOYING function
+EXT_MAIN
