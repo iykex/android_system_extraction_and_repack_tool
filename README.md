@@ -10,7 +10,10 @@
 
 ##**USAGE:**##
 ----------
-##**NOTE**## 
+##**NOTE**##
+
+First Clone the repo.
+
 Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **Desktop**
 
 1. Run **"Xtrakt"** from it's location in terminal 
