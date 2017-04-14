@@ -24,7 +24,8 @@ Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **D
 5. Use "y" from menu to repack, which the complete new **"system.new.dat", "system.patch.dat" & "system.transfer.list"** will be located at **"Finish-new.dat"** folder
 6. Done !
   
-Also you can **DOWNLOAD FROM HERE**
+Also you can **DOWNLOAD Zip** from below link :
+
 **AFH** : **https://www.androidfilehost.com/?fid=457095661767153233**
 
 
