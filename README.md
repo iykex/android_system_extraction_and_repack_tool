@@ -46,6 +46,19 @@ Double-click the superr file and choose "Run in Terminal" if your OS supports it
 ##**ALERT!!!**##
 sudo is requested in the script.
 
-**http://www.droidpeepz.xyz**
+**Website:** **http://www.droidpeepz.xyz**
+
+**Sources :**
+Android_System_Extractrion_and_Repack_Tool : https://github.com/iykequame/Android...nd_Repack_Tool
+sdat2img 1.0 - img2sdat 1.2 : https://forum.xda-developers.com/and...es-to-t2978952
+For file_context.bin conversion : https://www.youtube.com/watch?v=Tw5f4iLUYhc by: Pom Kritsada @ MTK THAI Developers.
+
+Credit to :
+@xpirt [xda]
+@SuperR. [xda]
+-all xda threads which helped
+-Android Matrix Development - [facebook]
+-Nana Yaa for her time.
+
 
 ##THANK YOU##
