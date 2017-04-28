@@ -41,7 +41,7 @@ cd ~/Desktop/Android_System_Extractrion_and_Repack_Tool/
 
 **OR**
 
-Double-click the superr file and choose "Run in Terminal" if your OS supports it.
+Double-click the Xtrakt file and choose "Run in Terminal" if your OS supports it.
 
 ##**ALERT!!!**##
 sudo is requested in the script.
