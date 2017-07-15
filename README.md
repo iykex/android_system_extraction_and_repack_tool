@@ -1,16 +1,16 @@
-##**Android System Extraction and Repack Tool**##
+# Android System Extraction and Repack Tool
 
-##by : iykeDROID™##
+## by : iykeDROID™
 
-##_Nana Iyke Quame_##
+## _Nana Iyke Quame_
 
 **http://www.droidpeepz.xyz**
 
 
 
-##**USAGE:**##
+**USAGE:**
 ----------
-##**NOTE**##
+## NOTE
 
 First Clone the repo.
 
@@ -29,7 +29,7 @@ Also you can **DOWNLOAD Zip** from below link :
 **AFH** : **https://www.androidfilehost.com/?fid=457095661767153233**
 
 
-##**EXAMPLE:**##
+## EXAMPLE:
 
 Again , Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **Desktop**
 
@@ -43,7 +43,7 @@ cd ~/Desktop/Android_System_Extractrion_and_Repack_Tool/
 
 Double-click the Xtrakt file and choose "Run in Terminal" if your OS supports it.
 
-##**ALERT!!!**##
+**ALERT!!!**
 sudo is requested in the script.
 
 **Website:** **http://www.droidpeepz.xyz**
@@ -55,10 +55,14 @@ For file_context.bin conversion : https://www.youtube.com/watch?v=Tw5f4iLUYhc by
 
 Credit to :
 @xpirt [xda]
+
 @SuperR. [xda]
+
 -all xda threads which helped
+
 -Android Matrix Development - [facebook]
+
 -Nana Yaa for her time.
 
 
-##THANK YOU##
+## THANK YOU
