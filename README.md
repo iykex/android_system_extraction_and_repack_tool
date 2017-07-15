@@ -49,9 +49,10 @@ sudo is requested in the script.
 **Website:** **http://www.droidpeepz.xyz**
 
 **Sources :**
-Android_System_Extractrion_and_Repack_Tool : https://github.com/iykequame/Android...nd_Repack_Tool
+Android_System_Extractrion_and_Repack_Tool : https://github.com/iykequame/Android_System_Extractrion_and_Repack_Tool
+XDA : https://forum.xda-developers.com/android/software-hacking/dev-android-extractrion-repack-tool-t3588311
 
-sdat2img 1.0 - img2sdat 1.2 : https://forum.xda-developers.com/and...es-to-t2978952
+sdat2img 1.0 - img2sdat 1.2 : https://forum.xda-developers.com/android/software-hacking/how-to-conver-lollipop-dat-files-to-t2978952
 
 For file_context.bin conversion : https://www.youtube.com/watch?v=Tw5f4iLUYhc by: Pom Kritsada @ MTK THAI Developers.
 
