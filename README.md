@@ -1,15 +1,15 @@
 Android System Extractrion and Repack Tool
 ==========================================
 
-##by : iykeDROID™ ##
+by : iykeDROID™
 
-##_Nana Iyke Quame_##
+_Nana Iyke Quame_
 
 [WEBSITE](http://www.droidpeepz.xyz/)
 
-##**USAGE:**##
+**USAGE:**
 ----------
-##**NOTE**## 
+**NOTE**
 Make sure that  **android_system_extraction_and_repack_tool** is located at **Desktop**
 
 1. Run **"Xtrakt"** from it's location in terminal 
@@ -21,11 +21,16 @@ Make sure that  **android_system_extraction_and_repack_tool** is located at **De
 6. Done !
   
 
-##**EXAMPLE:**##
+**EXAMPLE:**
 
 In your terminal, type the following to start the script:
 ```
+git clone https://github.com/iykequame/Android_System_Extraction_and_Repack_Tool.git
+
+mv android_system_extraction_and_repack_tool ~/Desktop/ 
+
 cd ~/Desktop/android_system_extraction_and_repack_tool/
+
 ./Xtrakt
 ```
 
@@ -33,7 +38,8 @@ cd ~/Desktop/android_system_extraction_and_repack_tool/
 
 Double-click the Xtrakt file and choose "Run in Terminal" if your OS supports it.
 
-##**ALERT!!!**##
+**ALERT!!!**
+------------
 sudo is requested in the script.
 
 [WEBSITE](http://www.droidpeepz.xyz/)
