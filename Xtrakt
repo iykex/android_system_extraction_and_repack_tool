@@ -1,5 +1,5 @@
 #!/bin/bash
-printf '\e[8;35;80t]'
+printf '\e[8;33;80t]'
 #
 # Custom build script
 # Copyright © 2017, Nana Iyke Quame "iyke"
@@ -14,7 +14,7 @@ printf '\e[8;35;80t]'
 #
 #--------------------------
 user=$(echo "$(whoami | gawk '{ print $1 }')")
-tul=Android_System_Extractrion_and_Repack_Tool
+tul=android_system_extraction_and_repack_tool
 hm=home
 dsk=Desktop
 sy=system
@@ -30,7 +30,6 @@ START(){
 clear
 echo -e "                        \033[0;34m "
 cecho P"" "                     \e[4m*||_http://www.droidpeepz.xyz_||*"
-echo
 echo
 cecho P ""  "                     \e[7m================================="
 cecho C ""  "            \e[7m===!! Android System Extraction/Repack Tool. !!==="
@@ -60,7 +59,6 @@ echo
 cecho C "    v - " "View Credits + info"
 echo
 cecho R "    x - " "Exit"
-echo
 echo
 }
 
@@ -101,8 +99,13 @@ echo
 }
 
 #ST_DEB
+# <!--made temporary fix for file_contexts directory -->
 st_flicx(){
+  if [ -f  cd /$hm/$user/$dsk/$tul/.flicx ]
+  then
 cd /$hm/$user/$dsk/$tul/.flicx
+else
+cd .flicx
 if [ -f  flicx.sh* ]
 then
 chmod +x flicx.sh
@@ -111,13 +114,14 @@ else
 START
 #exit
 fi
+ fi
 }
 
 #--------------------------
 #converting to system image
 #--------------------------
 UnPck(){
-printf '\e[8;35;80t]'
+printf '\e[8;33;80t]'
 $permsda
 clear
 PAGE
@@ -193,7 +197,7 @@ fi
 
 
 RePck(){
-printf '\e[8;35;80t]'
+printf '\e[8;33;80t]'
 PAGE
 echo
 #--------------------------
@@ -332,7 +336,7 @@ HOME " "
 
 #EXIT
 EXIT(){
-printf '\e[8;35;80t]'
+printf '\e[8;33;80t]'
 clear
  cecho C "" "Talent Is Nothing WIthout Ethics!!!"
  sleep 1.0;
