@@ -1,20 +1,15 @@
-# Android System Extraction and Repack Tool
+#**Android System Extractrion and Repack Tool **#
 
-## by : iykeDROID™
+##by : iykeDROID™ ##
 
-## _Nana Iyke Quame_
+##_Nana Iyke Quame_##
 
-**http://www.droidpeepz.xyz**
+[WEBSITE](http://www.droidpeepz.xyz/)
 
-
-
-**USAGE:**
+##**USAGE:**##
 ----------
-## NOTE
-
-First Clone the repo.
-
-Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **Desktop**
+##**NOTE**## 
+Make sure that  **android_system_extraction_and_repack_tool** is located at **Desktop**
 
 1. Run **"Xtrakt"** from it's location in terminal 
 2. Copy **"file_contexts.bin"** from your Rom to  **"file_context_zone"** folder 
@@ -24,18 +19,12 @@ Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **D
 5. Use "y" from menu to repack, which the complete new **"system.new.dat", "system.patch.dat" & "system.transfer.list"** will be located at **"Finish-new.dat"** folder
 6. Done !
   
-Also you can **DOWNLOAD Zip** from below link :
 
-**AFH** : **https://www.androidfilehost.com/?fid=457095661767153233**
-
-
-## EXAMPLE:
-
-Again , Make sure that  **Android_System_Extractrion_and_Repack_Tool** is located at **Desktop**
+##**EXAMPLE:**##
 
 In your terminal, type the following to start the script:
 ```
-cd ~/Desktop/Android_System_Extractrion_and_Repack_Tool/
+cd ~/Desktop/android_system_extraction_and_repack_tool/
 ./Xtrakt
 ```
 
@@ -43,19 +32,25 @@ cd ~/Desktop/Android_System_Extractrion_and_Repack_Tool/
 
 Double-click the Xtrakt file and choose "Run in Terminal" if your OS supports it.
 
-**ALERT!!!**
+##**ALERT!!!**##
 sudo is requested in the script.
 
-**Website:** **http://www.droidpeepz.xyz**
+[WEBSITE](http://www.droidpeepz.xyz/)
 
 **Sources :**
-Android_System_Extractrion_and_Repack_Tool : https://github.com/iykequame/Android_System_Extractrion_and_Repack_Tool
+Android_System_Extraction_and_Repack_Tool 
 
-XDA : https://forum.xda-developers.com/android/software-hacking/dev-android-extractrion-repack-tool-t3588311
+[GITHUB](https://github.com/iykequame/Android_System_Extractrion_and_Repack_Tool)
 
-sdat2img 1.0 - img2sdat 1.2 : https://forum.xda-developers.com/android/software-hacking/how-to-conver-lollipop-dat-files-to-t2978952
+[BITBUCKET](https://bitbucket.org/zac6ix/android_system_extraction_and_repack_tool)
 
-For file_context.bin conversion : https://www.youtube.com/watch?v=Tw5f4iLUYhc by: Pom Kritsada @ MTK THAI Developers.
+**Threads**
+
+[XDA](https://forum.xda-developers.com/android/software-hacking/dev-android-extractrion-repack-tool-t3588311)
+
+[sdat2img 1.0 - img2sdat 1.2](https://forum.xda-developers.com/android/software-hacking/how-to-conver-lollipop-dat-files-to-t2978952)
+
+[For file_context.bin conversion](https://www.youtube.com/watch?v=Tw5f4iLUYhc) by: Pom Kritsada @ MTK THAI Developers.
 
 Credit to :
 @xpirt [xda]
@@ -67,6 +62,5 @@ Credit to :
 -Android Matrix Development - [facebook]
 
 -Nana Yaa for her time.
-
 
 ## THANK YOU
