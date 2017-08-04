@@ -1,4 +1,5 @@
-#**Android System Extractrion and Repack Tool **#
+Android System Extractrion and Repack Tool
+==========================================
 
 ##by : iykeDROID™ ##
 
@@ -53,14 +54,15 @@ Android_System_Extraction_and_Repack_Tool
 [For file_context.bin conversion](https://www.youtube.com/watch?v=Tw5f4iLUYhc) by: Pom Kritsada @ MTK THAI Developers.
 
 Credit to :
-@xpirt [xda]
 
-@SuperR. [xda]
+[@xpirt {xda}](https://forum.xda-developers.com/member.php?u=5132229)
+
+[@SuperR. {xda}](https://forum.xda-developers.com/member.php?u=5787964)
 
 -all xda threads which helped
 
--Android Matrix Development - [facebook]
+-[Android Matrix Development](https://web.facebook.com/groups/1024872487548231/)
 
--Nana Yaa for her time.
+-Nana Yaa {Jennie} for her time.
 
 ## THANK YOU
