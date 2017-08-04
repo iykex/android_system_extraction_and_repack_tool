@@ -1,4 +1,4 @@
-Android System Extractrion and Repack Tool
+Android System Extraction and Repack Tool
 ==========================================
 
 by : iykeDROID™
