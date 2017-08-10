@@ -15,7 +15,7 @@ printf '\e[8;35;80t]'
 #--------------------------
 
 user=$(echo "$(whoami | gawk '{ print $1 }')")
-tul=Android_System_Extractrion_and_Repack_Tool
+tul=android_system_extraction_and_repack_tool
 hm=home
 dsk=Desktop
 
@@ -40,10 +40,12 @@ cecho B "" "             	     Pom Kritsada @MTK THAI Developers  "
 echo "                     ========*****************========"
 echo
 
-
-cecho B "" "    \e[7mMenu"    "                        || Start Time : "$(date +%b-%d-%Y-%H:%M)''
+CT="$(date +"%r")"
+DT="$(date +"%b-%d-%Y")"
+cecho B "" "    \e[7m\e[3mMenu" "                        \033[0;36m\e[3m|| Time : $CT"
+cecho C "" "    \e[3mHost System : $HOSTNAME" "    \033[0;36m\e[3m|| Date : $DT"
 echo
-cecho Y "    v - " "View Credits & info"
+cecho Y "    \033[0mv - " "View Credits & info"
 echo
 cecho C "    c - " "Convert"
 echo
@@ -77,9 +79,76 @@ done
 V_CREDIT(){
   clear
   echo
-  echo " adding soon"
+  PAGE
+  echo -e "                        \033[0;34m "
+  cecho P " ""    \e[4m\e[7m@Xpirt [XDA]"
+  echo "    for : sdat2img 1.0 - img2sdat 1.2"
+  echo "    check thread link below  >>"
+  cecho P"" "    \033[0;33m\e[3m\e[4m*https://forum.xda-developers.com/android/software-hacking/how-to-conver-lollipop-dat-files-to-t2978952"
   echo
-  read -p                 "Press enter key to continue . . ."
+  echo
+  echo
+  cecho P " " "\e[3m "
+  read -p "         Press enter key for next . . ."
+  clear
+  echo
+  PAGE
+  echo -e "                        \033[0;34m "
+  cecho P " ""    \e[4m\e[7m@SuperR. [XDA]"
+  echo "    for : Some binaries"
+  echo "    check profile link below  >>"
+  cecho P"" "    \033[0;33m\e[3m\e[4m*https://forum.xda-developers.com/member.php?u=5787964"
+  echo
+  echo
+  echo
+  cecho P " " "\e[3m "
+  read -p "         Press enter key for next . . ."
+  clear
+  echo
+  PAGE
+  echo -e "                        \033[0;34m "
+  cecho P " ""    \e[4m\e[7m@Pom Kritsada [MTK THAI Developers]"
+  echo "    for : file_context.bin conversion"
+  echo "    check video link below  >>"
+  cecho P"" "    \033[0;33m\e[3m\e[4m*https://www.youtube.com/watch?v=Tw5f4iLUYhc"
+  echo
+  echo
+  echo
+  cecho P " " "\e[3m "
+  read -p "         Press enter key to continue . . ."
+  clear
+  echo
+  PAGE
+  echo -e "                        \033[0;34m "
+  cecho P " ""    \e[4m\e[7m#AMD [FACEBOOK]"
+  echo "    Android Matrix Development"
+  echo "    check group link below  >>"
+  cecho P"" "    \033[0;33m\e[3m\e[4m*https://web.facebook.com/groups/1024872487548231/"
+  echo
+  echo
+  echo
+  cecho P " " "\e[3m "
+  read -p "         Press enter key for next . . ."
+    clear
+  echo
+  PAGE
+  echo -e "                        \033[0;34m "
+  cecho P " ""    \e[4m\e[7mNana Yaa [Jennie]"
+  echo "    for her time & motivation"
+  echo
+  echo
+  echo
+  cecho P " " "\e[3m "
+  read -p "         Press enter key for next . . ."
+  echo
+  clear
+  echo
+  PAGE
+  echo -e "                        \033[0;33m "
+  echo -e "             \e[3m[ THANKS FOR VIEWING ]"
+  echo -e "             \e[3m[  OUR CREDIT !!! ]"
+  echo
+  sleep 2.0;
   FILCX
 }
 
