@@ -27,7 +27,7 @@ Make sure that  **android_system_extraction_and_repack_tool** is located at **De
 
 In your terminal, type the following to start the script:
 ```
-git clone https://github.com/iykequame/Android_System_Extraction_and_Repack_Tool.git
+git clone https://github.com/iykequame/android_system_extraction_and_repack_tool.git
 
 mv android_system_extraction_and_repack_tool ~/Desktop/ 
 
