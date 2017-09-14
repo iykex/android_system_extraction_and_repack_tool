@@ -3,7 +3,7 @@
 #====================================================
 #          FILE: sdat2img.py
 #       AUTHORS: xpirt - luxi78 - howellzhu
-#          DATE: 2016-11-23 16:20:11 CST
+#          DATE: 2017-01-04 2:01:45 CEST
 #====================================================
 
 import sys, os, errno
@@ -91,9 +91,9 @@ def main(argv):
     elif version == 2:
         print('Android Lollipop 5.1 detected!\n')
     elif version == 3:
-        print('Android Marshmallow 6.0 detected!\n')
+        print('Android Marshmallow 6.x detected!\n')
     elif version == 4:
-        print('Android Nougat 7.0 detected!\n')
+        print('Android Nougat 7.x / Oreo 8.x detected!\n')
     else:
         print('Unknown Android version!\n')
 
@@ -122,7 +122,7 @@ def main(argv):
 
                 # Position output file
                 output_img.seek(begin*BLOCK_SIZE)
-
+                
                 # Copy one block at a time
                 while(block_count > 0):
                     output_img.write(new_data_file.read(BLOCK_SIZE))

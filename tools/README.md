@@ -1,31 +1,35 @@
-# img2sdat
-Convert filesystem ext4 image (.img) into Android sparse data image (.dat)
+# sdat2img
+Convert sparse Android data image (.dat) into filesystem ext4 image (.img)
 
 
 
 ## Requirements
 This binary requires Python 2.7 or newer installed on your system.
 
-It currently supports Windows x86/x64, Linux x86/x64 & arm/arm64 architectures.
+It currently supports Windows, Linux, MacOS & ARM architectures.
 
 
 
 ## Usage
 ```
-img2sdat.py <system_img> [outdir] [version]
+sdat2img.py <transfer_list> <system_new_file> [system_img]
 ```
-- `<system_img>` = input system image
-- `[outdir]` = output directory (current directory by default)
-- `[version]` = transfer list version number (1 - 5.0, 2 - 5.1, 3 - 6.0, 4 - 7.0, will be asked by default, more info on xda thread)
+- `<transfer_list>` = input, system.transfer.list from rom zip
+- `<system_new_file>` = input, system.new.dat from rom zip
+- `[system_img]` = output ext4 raw image file (optional)
 
 
 
 ## Example
-This is a simple example on a Linux system:
+This is a simple example on a Linux system: 
 ```
-~$ ./img2sdat.py system.img tmp 4
+~$ ./sdat2img.py system.transfer.list system.new.dat system.img
 ```
-It will create files `system.new.dat`, `system.patch.dat`, `system.transfer.list` in directory `tmp`.
+
+
+
+## OTAs
+If you are looking on decompressing `system.patch.dat` file or `.p` files, therefore reproduce the patching system on your PC, check [imgpatchtools](https://github.com/erfanoabdi/imgpatchtools) out by @erfanoabdi.
 
 
 
