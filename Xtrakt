@@ -112,6 +112,8 @@ then
 chmod +x flicx.sh
 ./flicx.sh*
 else
+  chmod +x flicx.sh
+./$hm/$user/$dsk/$tul/.flicx/flicx.sh*
 START
 #exit
 fi
@@ -143,9 +145,9 @@ if [ -f /$hm/$user/$dsk/$tul/convert-dat/system.new.dat ]
   PAGE
 echo "            Few seconds to go... :)"
 ( tools/./sdat2img.py convert-dat/system.transfer.list convert-dat/system.new.dat convert-dat/system.img ) >> Unpack.log
-mkdir -p convert-dat/out
-mkdir -p convert-dat/tmpsparse
-mkdir -p convert-dat/rom_system
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/out
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/tmpsparse
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/rom_system
 mkdir -p Finish-new.dat
 echo
 echo "        -----> mounting system image..."
@@ -158,11 +160,12 @@ echo -e "  \033[0;36m "
 echo "        -----> setting permission for modifications..."
 echo "                  Please Wait..."
 sudo chown -R $user:$user /$hm/$user/$dsk/$tul/convert-dat/out
-( sudo cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> x-log
+( sudo cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> sx-log
+( cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out/* /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> x-log
 sudo umount /$hm/$user/$dsk/$tul/convert-dat/out/
 rm -rf /$hm/$user/$dsk/$tul/convert-dat/out
-rm convert-dat/system.new.dat
-rm convert-dat/system.transfer.list
+rm /$hm/$user/$dsk/$tul/convert-dat/system.new.dat
+rm /$hm/$user/$dsk/$tul/convert-dat/system.transfer.list
 echo
 echo -e "        \033[0;36m "
 echo "        -----> Please go to convert-dat/rom_system to edit your Rom "

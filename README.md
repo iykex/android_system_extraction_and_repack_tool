@@ -47,9 +47,8 @@ sudo is requested in the script.
 [WEBSITE](http://www.droidpeepz.xyz/)
 
 **Sources :**
-Android_System_Extraction_and_Repack_Tool 
 
-[GITHUB](https://github.com/iykequame/Android_System_Extractrion_and_Repack_Tool)
+[GITHUB](https://github.com/iykequame/android_system_extractrion_and_repack_tool)
 
 [BITBUCKET](https://bitbucket.org/zac6ix/android_system_extraction_and_repack_tool)
 
