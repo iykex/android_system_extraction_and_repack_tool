@@ -14,15 +14,12 @@ printf '\e[8;33;80t]'
 #
 #--------------------------
 user=$(echo "$(whoami | gawk '{ print $1 }')")
-tul=android_system_extraction_and_repack_tool
-hm=home
-dsk=Desktop
-sy=system
-flicx="$PWD/$hm/$user/$dsk/$tull/file_context_zone/.flicx/flicx.sh";
-permsda=chmod 755 /$hm/$user/$dsk/$tultools/sdat2img.py
-permimg=chmod 755 /$hm/$user/$dsk/$tultools/img2simg.py
-permext=chmod 755 /$hm/$user/$dsk/$tultools/make_ext4fs
-permext=chmod 755 /$hm/$user/$dsk/$tultools/img2simg.py
+PROJECT_DIR=`realpath "$0" | sed 's|\(.*\)/.*|\1|'`
+flicx="$PROJECT_DIR/.flicx/flicx.sh";
+permsda=chmod 755 $PROJECT_DIR/tools/sdat2img.py
+permimg=chmod 755 $PROJECT_DIR/tools/img2simg.py
+permext=chmod 755 $PROJECT_DIR/tools/make_ext4fs
+permext=chmod 755 $PROJECT_DIR/tools/img2simg.py
 #-------------------
 
 #START - HOME
@@ -102,22 +99,20 @@ echo
 #ST_DEB
 # <!--made temporary fix for file_contexts directory -->
 st_flicx(){
-  if [ -f  cd /$hm/$user/$dsk/$tul/.flicx ]
+  if [ -f  cd $PROJECT_DIR/.flicx ]
   then
-cd /$hm/$user/$dsk/$tul/.flicx
-else
-cd .flicx
-if [ -f  flicx.sh* ]
-then
-chmod +x flicx.sh
-./flicx.sh*
-else
-  chmod +x flicx.sh
-./$hm/$user/$dsk/$tul/.flicx/flicx.sh*
-START
-#exit
-fi
- fi
+    cd $PROJECT_DIR/.flicx
+  else
+    cd .flicx
+  if [ -f  flicx.sh* ]
+  then
+    chmod +x flicx.sh
+    ./flicx.sh*
+  else
+    START
+  #exit
+  fi
+  fi
 }
 
 #--------------------------
@@ -131,12 +126,12 @@ PAGE
 
 echo "        -----> Unpacking Image."
 echo
-if [ -f /$hm/$user/$dsk/$tul/convert-dat/system.transfer.list ]
+if [ -f $PROJECT_DIR/convert-dat/system.transfer.list ]
   then
   echo
   echo "      system.transfer.list [FOUND]"
 fi
-if [ -f /$hm/$user/$dsk/$tul/convert-dat/system.new.dat ]
+if [ -f $PROJECT_DIR/convert-dat/system.new.dat ]
   then
   echo
   echo "      system.new.dat [FOUND]"
@@ -159,13 +154,12 @@ echo
 echo -e "  \033[0;36m "
 echo "        -----> setting permission for modifications..."
 echo "                  Please Wait..."
-sudo chown -R $user:$user /$hm/$user/$dsk/$tul/convert-dat/out
-( sudo cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> sx-log
-( cp -avr  /$hm/$user/$dsk/$tul/convert-dat/out/* /$hm/$user/$dsk/$tul/convert-dat/rom_system ) >> x-log
-sudo umount /$hm/$user/$dsk/$tul/convert-dat/out/
-rm -rf /$hm/$user/$dsk/$tul/convert-dat/out
-rm /$hm/$user/$dsk/$tul/convert-dat/system.new.dat
-rm /$hm/$user/$dsk/$tul/convert-dat/system.transfer.list
+sudo chown -R $user:$user $PROJECT_DIR/convert-dat/out
+( sudo cp -avr  $PROJECT_DIR/convert-dat/out $PROJECT_DIR/convert-dat/rom_system ) >> x-log
+sudo umount $PROJECT_DIR/convert-dat/out/
+rm -rf $PROJECT_DIR/convert-dat/out
+rm convert-dat/system.new.dat
+rm convert-dat/system.transfer.list
 echo
 echo -e "        \033[0;36m "
 echo "        -----> Please go to convert-dat/rom_system to edit your Rom "
@@ -208,14 +202,14 @@ echo
 echo "        -----> Repacking Image."
 echo
 echo "            Few seconds to go... :)"
-if [ -f /$hm/$user/$dsk/$tul/convert-dat/rom_system/build.prop* ]
+if [ -f $PROJECT_DIR/convert-dat/rom_system/build.prop* ]
  then
  api=$(grep "ro.build.version.sdk" convert-dat/rom_system/build.prop | cut -d"=" -f2)
  echo -e " \033[0;34m "
     (echo "      Android SDK = $api ")
     echo
     fi
-  if [ -f /$hm/$user/$dsk/$tul/convert-dat/file_contexts ]
+  if [ -f $PROJECT_DIR/convert-dat/file_contexts ]
     then
     echo "      file_contexts [FOUND]"
     echo
@@ -236,18 +230,18 @@ if [[ $api = "21" ]]; then
     argv="4"
   fi
   echo "            Please Wait..."
-( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) >> Repack.log
+( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) 
 echo
   echo "            Few seconds to go... :)"
-( cp -avr  /$hm/$user/$dsk/$tul/convert-dat/tmpsparse/system.* /$hm/$user/$dsk/$tul/Finish-new.dat ) >> x-log
+( cp -avr  $PROJECT_DIR/convert-dat/tmpsparse/system.* $PROJECT_DIR/Finish-new.dat ) >> x-log
 echo
   echo "            Thank You !!! :0"
-rm /$hm/$user/$dsk/$tul/convert-dat/tmpsparse/system.*
-rm /$hm/$user/$dsk/$tul/convert-dat/system.img
-rm /$hm/$user/$dsk/$tul/convert-dat/system_new.img
+rm $PROJECT_DIR/convert-dat/tmpsparse/system.*
+rm $PROJECT_DIR/convert-dat/system.img
+rm $PROJECT_DIR/convert-dat/system_new.img
 echo
 echo
-if [ -f /$hm/$user/$dsk/$tul/Finish-new.dat/system.new.dat ]
+if [ -f $PROJECT_DIR/Finish-new.dat/system.new.dat ]
 then
     PAGE
     echo -e "        \033[0;36m "
