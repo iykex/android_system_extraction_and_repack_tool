@@ -233,7 +233,7 @@ if [[ $api = "21" ]]; then
     argv="4"
   fi
   echo "            Please Wait..."
-( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) >> Repack.log
+( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) 
 echo
   echo "            Few seconds to go... :)"
 ( cp -avr  /$hm/$user/$dsk/$tul/convert-dat/tmpsparse/system.* /$hm/$user/$dsk/$tul/Finish-new.dat ) >> x-log
