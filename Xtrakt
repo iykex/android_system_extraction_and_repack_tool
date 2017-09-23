@@ -13,6 +13,12 @@ printf '\e[8;33;80t]'
 #  -
 #
 #--------------------------
+# Updated On : 2017/09/23 
+# by : @artificerpi 
+# reason : Change to use `relative path` 
+# commit : https://github.com/iykequame/android_system_extraction_and_repack_tool/pull/3/commits/4c8691b17c407a6d5eae9d408ba69c473e0f06c6 
+# commit-ID : 4c8691b17c407a6d5eae9d408ba69c473e0f06c6
+#--------------------------
 user=$(echo "$(whoami | gawk '{ print $1 }')")
 PROJECT_DIR=`realpath "$0" | sed 's|\(.*\)/.*|\1|'`
 flicx="$PROJECT_DIR/.flicx/flicx.sh";
