@@ -184,6 +184,7 @@ convert(){
   PAGE
   echo -e "                        \033[0;34m "
   echo " Please wait"
+  mkdir -p /$hm/$user/$dsk/$tul/file_context_zone/convert
   sleep 1.0;
    if [ -f /$hm/$user/$dsk/$tul/file_context_zone/convert/file_contexts* ]
 	then
@@ -218,6 +219,7 @@ revert(){
   PAGE
   echo -e "                        \033[0;34m "
   echo " Please wait"
+  mkdir -p /$hm/$user/$dsk/$tul/file_context_zone/revert
   sleep 1.0;
    if [ -f /$hm/$user/$dsk/$tul/file_context_zone/revert/file_contexts.bin* ]
 	then

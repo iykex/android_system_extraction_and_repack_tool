@@ -140,9 +140,9 @@ if [ -f $PROJECT_DIR/convert-dat/system.new.dat ]
   PAGE
 echo "            Few seconds to go... :)"
 ( tools/./sdat2img.py convert-dat/system.transfer.list convert-dat/system.new.dat convert-dat/system.img ) >> Unpack.log
-mkdir -p convert-dat/out
-mkdir -p convert-dat/tmpsparse
-mkdir -p convert-dat/rom_system
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/out
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/tmpsparse
+mkdir -p /$hm/$user/$dsk/$tul/convert-dat/rom_system
 mkdir -p Finish-new.dat
 echo
 echo "        -----> mounting system image..."
