@@ -39,7 +39,7 @@ cecho P ""  "                          ---> by : Nana Iyke Quame   "
 echo "                     ========*****************========"
 echo "                               Credit Goes To:"
 cecho Y "" "                      **ANDROID MATRIX DEVELOPMENT**"
-cecho P "" "                            & @xpirt, @Mesaj, @matrix  "
+cecho P "" "                  & @xpirt, @Mesaj, @matrix, @artificerpi "
 echo
 echo
 CT="$(date +"%r")"
