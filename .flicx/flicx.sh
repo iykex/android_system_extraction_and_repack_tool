@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 printf '\e[8;35;80t]'
 #
 # Custom build script
