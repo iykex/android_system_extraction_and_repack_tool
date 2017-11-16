@@ -125,6 +125,7 @@ st_flicx(){
 #converting to system image
 #--------------------------
 UnPck(){
+sudo mkdir $PROJECT_DIR/convert-dat/out
 printf '\e[8;33;80t]'
 $permsda
 clear
