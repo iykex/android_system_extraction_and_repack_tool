@@ -77,7 +77,7 @@ do
   read -p "           Enter option: " CHOICE
   case "$CHOICE" in
 			Y|y ) RePck;;
-			F|f ) st_flicx;;
+			F|f ) FILCX;;
 			I|i ) UnPck;;
 			V|v) V_CREDIT;;
 			X|x) EXIT;;
@@ -102,24 +102,109 @@ echo
 echo
 }
 
-#ST_DEB
-# <!--made temporary fix for file_contexts directory -->
-st_flicx(){
-  if [ -f  cd $PROJECT_DIR/.flicx ]
-  then
-    cd $PROJECT_DIR/.flicx
-  else
-    cd .flicx
-  if [ -f  flicx.sh* ]
-  then
-    chmod +x flicx.sh
-    ./flicx.sh*
-  else
-    START
-  #exit
-  fi
-  fi
+TIME(){
+CT="$(date +"%r")"
+DT="$(date +"%b-%d-%Y")"
+cecho B "" "    \e[7m\e[3mMenu" "                        \033[0;36m\e[3m|| Time : $CT"
+cecho C "" "    \e[3mHost System : $HOSTNAME" "    \033[0;36m\e[3m|| Date : $DT"
 }
+
+#ST_DEB
+FILCX(){
+COTEXTDIR=./file_context_zone
+CONFOLDER=./file_context_zone/convert
+REVFOLDER=./file_context_zone/revert
+BINNAME=file_contexts.bin
+NEWBINFILE=new-$(date +%Y%m%d)-$BINNAME
+clear
+PAGE
+echo
+cecho P "" "                   \e[7m*||_File_contexts.bin Convert Zone_||*"
+echo
+echo "                     ========*****************========"
+echo "                               Credit Goes To:"
+cecho C "" "            	    cofface@cofface.com - source script  "
+cecho B "" "             	     Pom Kritsada @MTK THAI Developers  "
+echo "                     ========*****************========"
+echo
+TIME
+echo
+cecho Y "    \033[0mv - " "View Credits & info"
+echo
+cecho C "    c - " "Convert"
+echo
+cecho G "    r - " "Revert "
+echo
+cecho R "    h - " "go to home"
+echo
+echo
+read -p "           Enter option: " x
+case "$x" in
+	V|v) V_CREDIT;;
+	C|c) CONVERT_FILCX;;
+	R|r) REVERT_FILCX;;
+	H|h ) go_back;;
+	*) cecho R "" "     Invalid option"; sleep 0.3; continue;;
+esac
+FILCX
+}
+
+CONVERT_FILCX(){
+clear
+PAGE
+echo -e "                        \033[0;34m "
+echo " Please wait"
+mkdir -p $CONFOLDER
+sleep 1.0;
+if [ -f $CONFOLDER/file_contexts* ]
+then
+ echo -e "  \033[0;31m "
+ echo "            File." "file_context already exist in folder; "
+ echo "            continuing will be overwrite it !!! "
+ echo
+ read -p "             to continue, press Enter ... "
+fi
+./tools/lib64/sefcontext -o $CONFOLDER/file_contexts $COTEXTDIR/$BINNAME > /dev/null
+if [ $? == 0 ]
+then
+ echo -e "                        \033[0;34m "
+ echo " !! DONE !!"
+ read -p                 "Press enter key to continue . . ."
+ echo
+else
+ echo " !! Faild !!"
+ read -p                 "Press enter key to continue . . ."
+fi
+}
+
+REVERT_FILCX() {
+clear
+PAGE
+echo -e "                        \033[0;34m "
+echo " Please wait"
+mkdir -p $REVFOLDER
+sleep 1.0;
+if [ -f $REVFOLDER/file_contexts.bin* ]
+then
+ echo -e "  \033[0;31m "
+ echo "            File." "file_context.bin already exist in folder; "
+ echo "            continuing will be overwrite it !!! "
+ echo
+ read -p "             to continue, press Enter ... "
+fi
+./tools/lib64/sefcontext_compile -o $REVFOLDER/$NEWBINFILE $CONFOLDER/file_contexts > /dev/null
+if [ $? == 0 ]
+then
+ echo -e "                        \033[0;34m "
+ echo " !! DONE !!"
+ read -p                 "Press enter key to continue . . ."
+ echo
+else
+ echo " !! Faild !!"
+ read -p                 "Press enter key to continue . . ."
+fi
+}
+
 
 #--------------------------
 #converting to system image
