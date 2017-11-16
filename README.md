@@ -7,7 +7,7 @@ _Nana Iyke Quame_
 
 [WEBSITE](http://www.droidpeepz.xyz/)
 
-![SS](https://github.com/iykequame/Android_System_Extraction_and_Repack_Tool/blob/master/DeepinScreenshot_select-area_20170804092902.png)
+![SS](https://github.com/iykequame/Android_System_Extraction_and_Repack_Tool/blob/master/.ss1.png)
 
 > Current Version : [v1.8](https://github.com/iykequame/android_system_extraction_and_repack_tool/releases/tag/v1.8)
 
