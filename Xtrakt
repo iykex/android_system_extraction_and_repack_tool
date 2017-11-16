@@ -109,13 +109,15 @@ cecho B "" "    \e[7m\e[3mMenu" "                        \033[0;36m\e[3m|| Time 
 cecho C "" "    \e[3mHost System : $HOSTNAME" "    \033[0;36m\e[3m|| Date : $DT"
 }
 
-#ST_DEB
-FILCX(){
+# File_context_zone
 COTEXTDIR=./file_context_zone
 CONFOLDER=./file_context_zone/convert
 REVFOLDER=./file_context_zone/revert
 BINNAME=file_contexts.bin
 NEWBINFILE=new-$(date +%Y%m%d)-$BINNAME
+
+#ST_DEB
+FILCX(){
 clear
 PAGE
 echo
@@ -143,7 +145,7 @@ case "$x" in
 	V|v) V_CREDIT;;
 	C|c) CONVERT_FILCX;;
 	R|r) REVERT_FILCX;;
-	H|h ) go_back;;
+	H|h ) START;;
 	*) cecho R "" "     Invalid option"; sleep 0.3; continue;;
 esac
 FILCX
@@ -266,8 +268,6 @@ echo
 echo "                !! DONE !!"
 echo
 echo
-read -p "Press enter key to continue . . ."
-START " "
 else
     PAGE
     echo -e "  \033[0;31m "
@@ -279,10 +279,10 @@ else
     echo
     cecho R "" "system.transfer.list -->> Missing !"
     echo
-    read -p "Press enter key to continue . . ."
     echo
-START " "
 fi
+read -p "Press enter key to continue . . ."
+START " "
 }
 
 
@@ -294,40 +294,45 @@ echo
 echo "        -----> Repacking Image."
 echo
 echo "            Few seconds to go... :)"
-if [ -f $PROJECT_DIR/convert-dat/rom_system/build.prop* ]
- then
- api=$(grep "ro.build.version.sdk" convert-dat/rom_system/build.prop | cut -d"=" -f2)
+if [ -f $PROJECT_DIR/convert-dat/rom_system/build.prop ]
+then
+ api=$(grep "ro.build.version.sdk" convert-dat/rom_system/build.prop | cut -d"=" -f2);
  echo -e " \033[0;34m "
-    (echo "      Android SDK = $api ")
-    echo
-    fi
-  if [ -f $PROJECT_DIR/convert-dat/file_contexts ]
-    then
-    echo "      file_contexts [FOUND]"
-    echo
-    echo -e "        \033[0;36m "
-    #tools/./make_ext4fs -T 0 -S convert-dat/file_contexts -l 1073741824 -a system -a system convert-dat/system_new.img convert-dat/out/
-    tools/./make_ext4fs -s -T -1 -S convert-dat/file_contexts -L system -l 2692743168 -a system convert-dat/system_new.img convert-dat/rom_system/
+ echo "      Android SDK = $api "
+ echo
+fi
+if [ -f $PROJECT_DIR/convert-dat/file_contexts ]
+ then
+ echo "      file_contexts [FOUND]"
+ echo
+ echo -e "        \033[0;36m "
+ tools/./make_ext4fs -s -T -1 -S convert-dat/file_contexts -L system -l 2692743168 -a system convert-dat/system_new.img convert-dat/rom_system/
 echo
 clear
 PAGE
 echo "        -----> Converting To Sparse Image."
-if [[ $api = "21" ]]; then
-    argv="1"
-  elif [[ $api = "22" ]]; then
-    argv="2"
-  elif [[ $api = "23" ]]; then
-    argv="3"
-  elif [[ $api -ge "24" ]]; then
-    argv="4"
-  fi
-  echo "            Please Wait..."
-( tools/./img2sdat.py convert-dat/system_new.img convert-dat/tmpsparse $argv 2>&1 ) 
+if [[ $api = "21" ]];
+then
+ argv="1"
+elif [[ $api = "22" ]];
+then
+ argv="2"
+elif [[ $api = "23" ]];
+then
+ argv="3"
+elif [[ $api = "24" ]];
+then
+ argv="4"
+elif [[ $api = "25" ]];
+then
+ argv="4"
+fi
+echo "            Please Wait..."
+./tools/img2sdat.py convert-dat/system_new.img Finish-new.dat $argv; 
 echo
-  echo "            Few seconds to go... :)"
-( cp -avr  $PROJECT_DIR/convert-dat/tmpsparse/system.* $PROJECT_DIR/Finish-new.dat ) >> x-log
+echo "            Few seconds to go... :)"
 echo
-  echo "            Thank You !!! :0"
+echo "            Thank You !!! :0"
 rm $PROJECT_DIR/convert-dat/tmpsparse/system.*
 rm $PROJECT_DIR/convert-dat/system.img
 rm $PROJECT_DIR/convert-dat/system_new.img
@@ -335,27 +340,25 @@ echo
 echo
 if [ -f $PROJECT_DIR/Finish-new.dat/system.new.dat ]
 then
-    PAGE
-    echo -e "        \033[0;36m "
-    echo " PLEASE CHECK Finish-new.dat -Folder to see the following new files"
-    echo
-    echo "  ************************************"
-    echo
-    ls Finish-new.dat
-    echo  ""
-echo -e "                        \033[0;34m "
-echo "============================="
-echo "          !! PROCESS TIME !!      "
-echo $[$SECONDS / 60]' minutes '$[$SECONDS % 60]' seconds'
-echo "============================="
-echo
-echo
-echo "                !! DONE !!"
-echo
-echo
-read -p "Press enter key to continue . . ."
-echo
-START " "
+ PAGE
+ echo -e "        \033[0;36m "
+ echo " PLEASE CHECK Finish-new.dat -Folder to see the following new files"
+ echo
+ echo "  ************************************"
+ echo
+ ls Finish-new.dat
+ echo  ""
+ echo -e "                        \033[0;34m "
+ echo "============================="
+ echo "          !! PROCESS TIME !!      "
+ echo $[$SECONDS / 60]' minutes '$[$SECONDS % 60]' seconds'
+ echo "============================="
+ echo
+ echo
+ echo "                !! DONE !!"
+ echo
+ echo
+ echo
 fi
 else
     PAGE
@@ -381,10 +384,10 @@ else
     echo
     cecho R "" "Repack ERRORS!"
     echo
-    read -p "Press enter key to continue . . ."
     echo
-START " "
 fi
+read -p                 "Press enter key to continue . . ."
+START " "
 }
 #--------------------------
 
